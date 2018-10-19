@@ -98,7 +98,18 @@ class VerificarRegistroTester(TestCase):
         self.assertFalse(VerificarRegistro("moc.liamg@selaz", "AAAAAAb1", "1bAAAAAA"))
         
     
+class IngresarUsuarioTester(TestCase):
     
+    def setUp(self):
+        self.my_dict =    {
+              "pepitogonzales@gmail.com" : "OOlabraa23",
+              "pepitomater@gmail.com" :"OOlabraa2",
+              "andreacolliani@hotmail.com": "Aeerer234"
+            }
+    
+    # primera prueba de ingreso
+    def testPrimerIngreso(self):
+        self.assertTrue(IngresarUsuario("pepitogonzales@gmail.com", "OOlabraa23", self.my_dict))
     
     
     
