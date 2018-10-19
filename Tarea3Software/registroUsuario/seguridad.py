@@ -25,7 +25,7 @@ def ValidarNoCaracteresEspeciales(clave):
     return bool(re.match("^[a-zA-Z0-9_]*$", clave))
 
 def ContieneAlMenosTresLetras(clave):
-    return bool(re.match("(.*[a-z]){3}", clave))
+    return bool(re.match("(.*[a-zA-Z]){3}", clave))
 
 def ContieneAlMenosUnaMinuscula(clave):
     return any(x.islower() for x in clave)
