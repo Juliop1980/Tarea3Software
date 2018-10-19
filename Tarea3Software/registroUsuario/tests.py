@@ -12,5 +12,8 @@ class FunctionsTester(TestCase):
     #frontera: tiene 0 digitos la contrasena
     def testDigitsPassword(self):
         self.assertFalse(VerificarRegistro("pepitogonzales@gmail.com", "Olabraa", "Olabraa"))
-        
+    
+    #frontera: clave no valida
+    def testNotValidPassword(self):
+        self.assertFalse(VerificarRegistro("pepitogonzales@", "Olabraa2", "Olabraa2"))
     
