@@ -1,5 +1,5 @@
 from django.test import TestCase
-from registroUsuario.seguridad import VerificarRegistro
+from registroUsuario.seguridad import VerificarRegistro, IngresarUsuario
 
 # Create your tests here.
 class VerificarRegistroTester(TestCase):
@@ -102,9 +102,9 @@ class IngresarUsuarioTester(TestCase):
     
     def setUp(self):
         self.my_dict =    {
-              "pepitogonzales@gmail.com" : "OOlabraa23",
-              "pepitomater@gmail.com" :"OOlabraa2",
-              "andreacolliani@hotmail.com": "Aeerer234"
+              "pepitogonzales@gmail.com" : "32aarbalOO",
+              "pepitomater@gmail.com" :"2aarbalOO",
+              "andreacolliani@hotmail.com": "432rereeA"
             }
     
     # primera prueba de ingreso

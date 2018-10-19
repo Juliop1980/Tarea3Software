@@ -35,6 +35,14 @@ def ContieneAlMenosUnaMayuscula(clave):
 
 def ContieneAlMenosUnDigito(clave):
     return any(x.isdigit() for x in clave)
+
+def IngresarUsuario(correo, clave, my_dict):
+    clave_dict = clave[::-1]
+    element = my_dict.get(correo)
+    return element == clave_dict
+
+    
+    
     
 
 
