@@ -68,6 +68,19 @@ class FunctionsTester(TestCase):
     # esquina: Email invalido y contrasena invalida
     def testInvalidEmailNotMatchingPassword(self):
         self.assertFalse(VerificarRegistro("pepitogonzales@gmailcom", "Abc12312", "Abc123124"))
+        
+    # esquina: Esquina tiene 0 mayus y 2 letras
+    def testHasZeroUpperLetterAndTwoLetters(self):
+        self.assertFalse(VerificarRegistro("pepitogonzales@gmail.com", "bc123124", "bc123124"))
+    
+    # esquina: Esquina tiene 1 digito y una mayus
+    def testOneDigitAndOneUpperCase(self):
+        self.assertTrue(VerificarRegistro("pepitogonzales@gmail.com", "Abcbcsdgf1", "Abcbcsdgf1"))
+    
+    # esquina: Esquina tiene 1 digito y  una minus
+    def testOneDigitAndOneLowerCase(self):
+        self.assertTrue(VerificarRegistro("pepitogonzales@gmail.com", "AAAAAAb1", "AAAAAAb1"))
+    
     
     
     
