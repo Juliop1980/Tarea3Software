@@ -2,7 +2,7 @@ from django.test import TestCase
 from registroUsuario.seguridad import VerificarRegistro
 
 # Create your tests here.
-class FunctionsTester(TestCase):
+class VerificarRegistroTester(TestCase):
     
     
     # primera prueba de test
@@ -80,6 +80,23 @@ class FunctionsTester(TestCase):
     # esquina: Esquina tiene 1 digito y  una minus
     def testOneDigitAndOneLowerCase(self):
         self.assertTrue(VerificarRegistro("pepitogonzales@gmail.com", "AAAAAAb1", "AAAAAAb1"))
+        
+    # malicia: colocan solo los caracteres especiales del email
+    def testSoloCaracteresEspecialesEmail(self):
+        self.assertFalse(VerificarRegistro("@.", "AAAAAAb1", "AAAAAAb1"))
+        
+    # malicia: colocan solo .com
+    def testSoloCom(self):
+        self.assertFalse(VerificarRegistro("@.com", "AAAAAAb1", "AAAAAAb1"))
+        
+    # malicia: colocan email al reves
+    def testReverseEmail(self):
+        self.assertFalse(VerificarRegistro("moc.liamg@selaz", "AAAAAAb1", "AAAAAAb1"))
+        
+    # malicia: la segunda clave es el reverso de la clave 2
+    def testReversePassword(self):
+        self.assertFalse(VerificarRegistro("moc.liamg@selaz", "AAAAAAb1", "1bAAAAAA"))
+        
     
     
     
