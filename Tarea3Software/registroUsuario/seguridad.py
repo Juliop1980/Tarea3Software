@@ -10,7 +10,7 @@ def VerificarClavesCoinciden(clave1, clave2):
     return clave1==clave2
 
 def ValidarCorreo(correo):
-    patron = "^.+@(\[?)[a-zA-Z0-9-.]+.([a-zA-Z]{2,3}|[0-9]{1,3})(]?)$"
+    patron = "[^@]+@[^@]+\.[^@]+"
     Correo_REGEX = re.compile(patron)
     result = bool(Correo_REGEX.match(correo))
     return result
