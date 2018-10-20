@@ -23,11 +23,25 @@ class Seguridad:
         resultado = validacion1 and validacion2 and validacion3 and validacion4 and validacion5 and validacion6
         if resultado == False:
             mensaje = "Clave Invalida"
-            if !validacion1:
+            if validacion1 == False:
                 mensaje = mensaje + ", longitud de clave incorrecta"
 
-            if !validacion2:
+            if validacion2 == False:
                 mensaje = mensaje + ", posee caracteres especiales"
+
+            if validacion3 == False:
+                mensaje = mensaje + ", posee menos de tres letras"
+
+            if validacion4 == False:
+                mensaje = mensaje + ", no posee mayusculas"
+
+            if validacion5 == False:
+                mensaje = mensaje + ", no posee minusculas"
+
+            if validacion6 == False:
+                mensaje = mensaje + ", no contiene digitos"
+                
+            print(mensaje)
 
         return resultado
           
