@@ -1,6 +1,5 @@
 import re
 
-
 class Seguridad:
 
     def __init__(self):
@@ -16,10 +15,10 @@ class Seguridad:
 
     # Funcion que verifica que la clave cumple con los requisitos necesarios
     def ValidarClave(self,clave):
-        validacion1 = self.ValidarLongitudClave(clave) 
+        validacion1 = self.ValidarLongitudClave(clave)
         validacion2 = self.ValidarNoCaracteresEspeciales(clave)
         validacion3 = self.ContieneAlMenosTresLetras(clave)
-        validacion4 = self.ContieneAlMenosUnaMayuscula(clave) 
+        validacion4 = self.ContieneAlMenosUnaMayuscula(clave)
         validacion5 = self.ContieneAlMenosUnaMinuscula(clave)
         validacion6 = self.ContieneAlMenosUnDigito(clave)
         resultado = validacion1 and validacion2 and validacion3 and validacion4 and validacion5 and validacion6
@@ -42,15 +41,15 @@ class Seguridad:
 
             if validacion6 == False:
                 mensaje = mensaje + ", no contiene digitos"
-                
+
             print(mensaje)
 
         return resultado
-    
+
     # Funcion que verifica que la clave original y su confirmacion son iguales
     def VerificarClavesCoinciden(self,clave1, clave2):
         return clave1==clave2
-    
+
     # Funcion que verifica que el correo tenga un formato correcto
     def ValidarCorreo(self,correo):
         patron = "[^@]+@[^@]+\.[^@]+"
@@ -59,7 +58,7 @@ class Seguridad:
         if result == False:
             print("Correo electrónico inválido")
         return result
-    
+
     # Funcion que verifica que la longitud de la clave esté entre los límites establecidos
     def ValidarLongitudClave(self,clave):
         longitudMinimaClave = 8
@@ -91,9 +90,3 @@ class Seguridad:
         clave_dict = clave[::-1]
         element = self.my_dict.get(correo)
         return element == clave_dict
-
-    
-    
-    
-
-
